@@ -4,7 +4,7 @@ class CartManagerFS {
     constructor(){
         this.path = path
     }
-    readCart = async () => {
+    async readCart() {
         try {
             const cartsJson = await fs.promises.readFile(path, 'utf-8')
             const cartsJs = JSON.parse(cartsJson)
@@ -14,9 +14,9 @@ class CartManagerFS {
         }
         
     } 
-    createCart          = async () => {}
-    getCartById         = async () => {}
-    createProductToCart = () => {}
+    // createCart          = async () => {}
+    // getCartById         = async () => {}
+    // createProductToCart = () => {}
 }
 
 // [

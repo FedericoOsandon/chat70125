@@ -8,7 +8,7 @@ class ProductsManagerFs {
     }
 
 
-    readPRoducts = async () => {
+    async readPRoducts(){
         if(fs.existsSync(path)){
             const productsJson = await fs.promises.readFile(path, 'utf-8')
             const productsJs = JSON.parse(productsJson)
@@ -18,14 +18,14 @@ class ProductsManagerFs {
     }
 
     // crud productos
-    getProducts   = async () => {
+    async getProducts (){
         const products =  await this.readPRoducts()
         return products
     }
 
-    getProduct    = async () => {}
+    async getProduct (){}
     
-    createProduct = async newProduct => {
+    async createProduct(newProduct) {
         try {
             const products = await this.readPRoducts()
             // [1, 3, 4] -> 2 + 1 = 3
@@ -42,8 +42,8 @@ class ProductsManagerFs {
         }
     }
 
-    updateProduct = async () => {}
-    deleteProduct = async () => {}
+    async updateProduct(){}
+    async deleteProduct(){}
 }
 
 module.exports = ProductsManagerFs
